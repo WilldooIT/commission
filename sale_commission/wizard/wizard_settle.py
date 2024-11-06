@@ -151,6 +151,7 @@ class SaleCommissionMakeSettle(models.TransientModel):
     def _get_agent_lines(self, agent, date_to_agent):
         aila = self.env["account.invoice.line.agent"].search(
             [
+                ("object_id.exclude_from_invoice_tab", "=", False),
                 ("invoice_date", "<", date_to_agent),
                 ("agent_id", "=", agent.id),
                 ("settled", "=", False),
