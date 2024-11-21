@@ -102,15 +102,17 @@
                                 <field name="settled_amount" />
                             </tree>
                         </field>
+                        <group class="oe_subtotal_footer oe_right">
+                            <label for="total" />
+                            <h4>
+                              <field
+                                    name="total"
+                                    widget="monetary"
+                                    options="{'currency_field': 'currency_id'}"
+                                />
+                            </h4>
+                        </group>
                     </page>
-                    <group class="oe_subtotal_footer oe_right">
-                        <field
-                            name="total"
-                            class="oe_subtotal_footer_separator"
-                            widget="monetary"
-                            options="{'currency_field': 'currency_id'}"
-                        />
-                    </group>
                 </notebook>
             </form>
         </field>
